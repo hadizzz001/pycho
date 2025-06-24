@@ -40,7 +40,7 @@ export default function RootLayout({
           content="At Psychocounseling, we're reshaping the way businesses connect."
           name="description"
         />
-        <meta content="Psychocounseling" name="keywords" property="Psychocounseling, Psychocounseling, design, interior, box, models, 3ds, 3d, 3ds max, autocad, vray" />
+        <meta content="Psychocounseling" name="keywords" property="Psychocounseling, Psychocounseling, psychology, counseling, therapy, psychotherapy, psychiatry, mental health, wellbeing" />
         <meta
           content="Psychocounseling"
           name=""
@@ -58,23 +58,23 @@ export default function RootLayout({
           property="og:description"
         />
         <meta
-          content="https://res.cloudinary.com/da8o9eb9e/image/upload/v1749986398/ico_hf12oo.webp"
+          content="https://res.cloudinary.com/dulttkbil/image/upload/v1750512693/logo_ba99my.webp"
           name=""
           property="og:image"
         />
 
         <link
-          href="https://res.cloudinary.com/da8o9eb9e/image/upload/v1749986398/ico_hf12oo.webp"
+          href="https://res.cloudinary.com/dulttkbil/image/upload/v1750512693/logo_ba99my.webp"
           rel="apple-touch-icon"
           sizes="180x180"
         />
         <link
-          href="https://res.cloudinary.com/da8o9eb9e/image/upload/v1749986398/ico_hf12oo.webp"
+          href="https://res.cloudinary.com/dulttkbil/image/upload/v1750512693/logo_ba99my.webp"
           rel="icon"
           sizes="32x32"
         />
         <link
-          href="https://res.cloudinary.com/da8o9eb9e/image/upload/v1749986398/ico_hf12oo.webp"
+          href="https://res.cloudinary.com/dulttkbil/image/upload/v1750512693/logo_ba99my.webp"
           rel="icon"
           sizes="16x16"
         />
