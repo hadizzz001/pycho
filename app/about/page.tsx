@@ -1,8 +1,25 @@
 'use client';
+import { useEffect, useState } from 'react';
 import { FaUsers, FaClock } from 'react-icons/fa';
 import Link from 'next/link';
 
 export default function AboutPage() {
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    // Safe to access `window` here
+    const checkWidth = () => {
+      setIsLargeScreen(window.innerWidth >= 1024);
+    };
+
+    checkWidth(); // Set initial value
+    window.addEventListener('resize', checkWidth);
+
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
+
+
+
   return (
     <div className="px-6 py-12 space-y-16">
       {/* Section 1: Intro */}
@@ -102,64 +119,64 @@ export default function AboutPage() {
       </section>
 
       {/* Section 3: Left Image + Text */}
-<section
-  style={{
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '2em 1em',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '2em',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  }}
->
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '2em',
-      alignItems: 'center',
-    }}
-  >
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: window.innerWidth >= 1024 ? 'row' : 'column',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: '2em',
-      }}
-    >
-      <img
-        src="https://res.cloudinary.com/dulttkbil/image/upload/v1750781297/378203d5-cc58-4b32-81fe-0f41bc10c1b4-removebg-preview_kj4s9w.webp"
-        width={500}
-        height={500}
-        alt="Helping Hands"
+      <section
         style={{
-          maxWidth: '100%',
-          width: '100%',
-          maxHeight: '500px',
-          objectFit: 'contain',
-        }}
-      />
-      <div
-        style={{
-          maxWidth: '600px',
-          textAlign: 'left',
+          maxWidth: '1200px',
+          margin: '0 auto',
+          padding: '2em 1em',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '2em',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
-        <h3 style={{ fontSize: '1.75rem', fontWeight: '600', color: '#2c5668', marginBottom: '1em' }}>
-          Our Commitment
-        </h3>
-        <p style={{ color: '#4a4a4a', fontSize: '1rem', lineHeight: '1.6' }}>
-          We believe in a personalized approach to therapy and counseling that recognizes each individual’s
-          unique journey. Our team works closely with clients to set goals, foster growth, and achieve results.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '2em',
+            alignItems: 'center',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: isLargeScreen ? 'row' : 'column',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '2em',
+            }}
+          >
+            <img
+              src="https://res.cloudinary.com/dulttkbil/image/upload/v1750781297/378203d5-cc58-4b32-81fe-0f41bc10c1b4-removebg-preview_kj4s9w.webp"
+              width={500}
+              height={500}
+              alt="Helping Hands"
+              style={{
+                maxWidth: '100%',
+                width: '100%',
+                maxHeight: '500px',
+                objectFit: 'contain',
+              }}
+            />
+            <div
+              style={{
+                maxWidth: '600px',
+                textAlign: 'left',
+              }}
+            >
+              <h3 style={{ fontSize: '1.75rem', fontWeight: '600', color: '#2c5668', marginBottom: '1em' }}>
+                Our Commitment
+              </h3>
+              <p style={{ color: '#4a4a4a', fontSize: '1rem', lineHeight: '1.6' }}>
+                We believe in a personalized approach to therapy and counseling that recognizes each individual’s
+                unique journey. Our team works closely with clients to set goals, foster growth, and achieve results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
       {/* Section 4: Full Width Quote with Background */}
@@ -191,34 +208,34 @@ export default function AboutPage() {
       </section>
 
       {/* Section 6: List of Points + Button */}
-<section className="max-w-3xl mx-auto space-y-6 text-center">
-  <div style={{ padding: '1em', textAlign: 'left' }}>
-    <ul style={{ listStyleType: 'disc', paddingLeft: '1.5em' }} className='myBul'>
-      <li style={{ color: '#2c5668', marginBottom: '0.5em' }}>
-        Certified and experienced therapists
-      </li>
-      <li style={{ color: '#2c5668', marginBottom: '0.5em' }}>
-        Customized sessions for personal growth
-      </li>
-      <li style={{ color: '#2c5668', marginBottom: '0.5em' }}>
-        Safe and confidential environment
-      </li>
-      <li style={{ color: '#2c5668', marginBottom: '0.5em' }}>
-        Proven techniques backed by science
-      </li>
-    </ul>
+      <section className="max-w-3xl mx-auto space-y-6 text-center">
+        <div style={{ padding: '1em', textAlign: 'left' }}>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5em' }} className='myBul'>
+            <li style={{ color: '#2c5668', marginBottom: '0.5em' }}>
+              Certified and experienced therapists
+            </li>
+            <li style={{ color: '#2c5668', marginBottom: '0.5em' }}>
+              Customized sessions for personal growth
+            </li>
+            <li style={{ color: '#2c5668', marginBottom: '0.5em' }}>
+              Safe and confidential environment
+            </li>
+            <li style={{ color: '#2c5668', marginBottom: '0.5em' }}>
+              Proven techniques backed by science
+            </li>
+          </ul>
 
-        <div className="col-span-2 flex justify-center">
-          <Link href="/contact">
-            <button
-              className="mt-6 bg-[#2c5668] text-white px-8 py-3 rounded-md hover:opacity-90"
-            >
-              Get Therapist Now!
-            </button>
-          </Link>
+          <div className="col-span-2 flex justify-center">
+            <Link href="/contact">
+              <button
+                className="mt-6 bg-[#2c5668] text-white px-8 py-3 rounded-md hover:opacity-90"
+              >
+                Get Therapist Now!
+              </button>
+            </Link>
+          </div>
         </div>
-  </div>
-</section>
+      </section>
 
 
     </div>

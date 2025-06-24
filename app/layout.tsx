@@ -126,6 +126,7 @@ export default function RootLayout({
 
             <Navbar2 />
             {/* <GoogleAnalytics gaId="" /> */}
+            <WhatsAppIcon />
             {children}
             <Footer /> 
         </LanguageProvider>
